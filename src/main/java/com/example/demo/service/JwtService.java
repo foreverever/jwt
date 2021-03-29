@@ -31,7 +31,6 @@ public class JwtService {
                 .signWith(SignatureAlgorithm.HS256, KEY.getBytes())
                 .setExpiration(new Date(System.currentTimeMillis() + ONE_MINUTE))
                 .compact();
-        jwtRepository.save(loginUser.getId(), jwt);
         return jwt;
     }
 
